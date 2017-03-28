@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="bnguyen" id="insert_missing_request_status">
+
+        <insert tableName="employee_role">
+            <column name="employee_id" type="int" value="2"/>
+            <column name="role_id" type="varchar(10)" value="1"/>
+        </insert>
+
+        <insert tableName="employee">
+            <column name="first_name" type="varchar(50)" value="Arman"/>
+            <column name="last_name" type="varchar(50)" value="Sharif"/>
+            <column name="email" type="varchar(255)" value="arman@gmail.com"/>
+            <column name="password" type="varchar(255)" value="123456"/>
+            <column name="leader_id" type="int" value="null"/>
+            <column name="start_working_date" type="date" value="2016/05/06"/>
+        </insert>
+        <insert tableName="employee_role">
+            <column name="employee_id" type="int" value="4"/>
+            <column name="role_id" type="varchar(10)" value="1"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="3"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="4"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="5"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="6"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="7"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="8"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="9"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="10"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="11"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="12"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="13"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="14"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="15"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="16"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="17"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="18"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="19"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="20"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="21"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="22"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="23"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="24"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="25"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="26"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="27"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="28"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="29"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="30"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="31"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="32"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="33"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="34"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="35"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="36"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="37"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="38"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="39"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="40"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="41"/>
+            <column name="leader_id" type="int" value="4"/>
+            <column name="approved" type="bool"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="42"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="approved" type="bool"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,223 @@
+#filter a {
+    color: black;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.panel-heading div {
+    margin-top: -18px;
+    font-size: 15px;
+}
+
+.panel-heading div span {
+    margin-left: 5px;
+}
+
+.current-user {
+    font-weight: bold;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+
+#dl-page-size {
+    padding-right: 10px;
+    padding-left: 2px;
+    background-color: #2196f3;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 2px solid white;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+#dl-page-size option {
+    color: black;
+    background-color: white;
+}
+
+/**** RESPONSIVE ****/
+
+/*
+	For any screen smaller than 760px
+	and also iPads specifically.
+*/
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    #table-data table,
+    #table-data thead,
+    #table-data tbody,
+    #table-data th,
+    #table-data td,
+    #table-data tr {
+        display: block;
+    }
+
+    #table-data thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #table-data tr { border: 1px solid #ccc; }
+
+    #table-data td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align:left;
+        min-height: 40px;
+    }
+
+    #table-data td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align:left;
+        font-weight: bold;
+    }
+
+    /*
+    Label the data
+    */
+    #table-data td:before { content: attr(data-title); }
+}
+
+/* iPads (portrait and landscape) */
+@media only screen and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+    body {
+        width: 100%;
+    }
+}
+
+/* Smart phones (portrait and landscape) */
+@media only screen and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+.search-not-found{
+    font-size: medium;
+}
+
+html, body {
+    height: 100%;
+}
+
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -60px;
+}
+
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+.site-footer, .page-wrap:after {
+    height: 60px;
+}
+
+.site-footer {
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.language .flag {
+    width: 20px;
+    height: 20px;
+}
+.language{
+    display: none !important;
+}
+
+@media only screen and (min-device-width: 768px) {
+    .language{
+        display: block !important;
+    }
+    .collapse.navbar-collapse {
+        position: relative;
+    }
+
+    .navbar-right {
+        margin-right: 0;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        right: 0;
+    }
+
+
+    .language ul {
+        min-width: 0;
+        width: 74px;
+    }
+
+    .language .btn {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    #list-language{
+        padding: 3px 0;
+    }
+
+    #list-language li a {
+        padding-left: 15px;
+    }
+
+}
+
+
+
+.loadinggif
+{
+    background:
+            url('/resources/images/indicator.gif')
+            no-repeat
+            right center;
+}
+
+
+.panel-timeoff{
+    padding: 0;
+}
+
+.panel-timeoff > table{
+    margin-bottom: 0;
+}
+
+/* Override color for mgm style */
+.navbar-brand{
+    padding: 0;
+    height: auto;
+}
+.navbar-brand img{
+    max-height: 64px;
+}
+.panel-primary > .panel-heading{
+    background-color: #0e70b9;
+    border-color: #0e70b9;
+}
+
+.btn-primary {
+    background-color: #0e70b9;
+}

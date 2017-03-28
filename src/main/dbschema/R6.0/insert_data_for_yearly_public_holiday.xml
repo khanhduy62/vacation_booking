@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet author="tvo" id="insert_data_for_yearly_public_holiday">
+
+        <insert tableName="yearly_public_holiday">
+            <column name="from_date" value="2017/1/1"></column>
+            <column name="to_date" value="2017/1/2"></column>
+            <column name="public_holiday_id" value="1"></column>
+        </insert>
+
+        <insert tableName="yearly_public_holiday">
+            <column name="from_date" value="2017/1/26"></column>
+            <column name="to_date" value="2017/2/1"></column>
+            <column name="public_holiday_id" value="2"></column>
+        </insert>
+
+        <insert tableName="yearly_public_holiday">
+            <column name="from_date" value="2017/4/6"></column>
+            <column name="to_date" value="2017/4/6"></column>
+            <column name="public_holiday_id" value="3"></column>
+        </insert>
+
+        <insert tableName="yearly_public_holiday">
+            <column name="from_date" value="2017/5/1"></column>
+            <column name="to_date" value="2017/5/1"></column>
+            <column name="public_holiday_id" value="4"></column>
+        </insert>
+
+        <insert tableName="yearly_public_holiday">
+            <column name="from_date" value="2017/5/2"></column>
+            <column name="to_date" value="2017/5/2"></column>
+            <column name="public_holiday_id" value="5"></column>
+        </insert>
+
+        <insert tableName="yearly_public_holiday">
+            <column name="from_date" value="2017/9/4"></column>
+            <column name="to_date" value="2017/9/4"></column>
+            <column name="public_holiday_id" value="6"></column>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

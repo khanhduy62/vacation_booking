@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet author="hcao" id="add_new_vacation_types_sick_with_doctor_notice">
+        <insert tableName="vacation_type">
+            <column name="name" value="Sick with doctor&apos;s notice"/>
+            <column name="description" type="varchar(255)"
+                    value="Sick with doctor&apos;s notice."/>
+            <column name="depend_on_start_working_date" value="false"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" value="2016"/>
+            <column name="vacation_type_id" value="10"/>
+            <column name="quota" value="null"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" value="2017"/>
+            <column name="vacation_type_id" value="10"/>
+            <column name="quota" value="null"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="dle" id="update_name_sick_doctors_note">
+        <update tableName="vacation_type">
+            <column name="name" value="Sick with doctor's note"/>
+            <column name="description" value="Sick with doctor's note"/>
+            <where>name='Sick with doctor''s notice'</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

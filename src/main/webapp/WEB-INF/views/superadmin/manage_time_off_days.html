@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="#{Manage.Time.Off.Days}">Manage Time-off Days</title>
+
+    <!--Authentication-->
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/webjars/bootswatch-paper/3.3.5+4/css/bootstrap.css"
+          th:href="@{/webjars/bootswatch-paper/3.3.5+4/css/bootstrap.css}">
+    <link href="/resources/css/style.css" th:href="@{/resources/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<!--Header-->
+<div th:replace="fragments/layout :: header"></div>
+
+<!--Content-->
+<div class="container page-wrap" style="margin-top: 90px;">
+
+    <div class="row">
+        <!--Invalid year error-->
+        <div th:if="${invalidYearError != null}" class="alert alert-dismissible alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <p th:text="${invalidYearError}"></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--Select year-->
+        <select id="select-year" class="input-large" style="width: 60px;">
+            <option th:each="year : ${listYears}"
+                    th:value="${year}"
+                    th:text="${year}"
+                    th:selected="${year == chosenYear}">
+            </option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <!--Time-off Days-->
+            <table id="time-off-days-table" class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th class="col-xs-8" th:text="#{Type}">Type</th>
+                    <th class="col-xs-4" th:text="#{Days}">Days</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="timeOffDays : ${timeOffDaysList}">
+                    <td th:text="#{${timeOffDays.vacationName}}"></td>
+                    <td class="quota-value-column" th:if="${ not timeOffDays.quota.isEmpty()}"
+                        th:text="${timeOffDays.quota}" th:id="${timeOffDays.yearlyQuotaId}"></td>
+                    <td class="quota-value-column" th:unless="${ not timeOffDays.quota.isEmpty()}" th:text="#{No.Limit}"
+                        th:id="${timeOffDays.yearlyQuotaId}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-6">
+            <!--Public Holidays-->
+            <table id="public-holidays-table" class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th class="col-xs-6" th:text="#{Holiday}">Type</th>
+                    <th class="col-xs-3" th:text="#{From}">From day</th>
+                    <th class="col-xs-3" th:text="#{To}">To day</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="publicHoliday : ${publicHolidays}">
+                    <td th:text="#{${publicHoliday.key}}"></td>
+                    <td th:text="${#calendars.format(publicHoliday.fromDate, 'dd/MM/yyyy')}"></td>
+                    <td th:text="${#calendars.format(publicHoliday.toDate, 'dd/MM/yyyy')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--Suggestion-->
+        <div class="text-center" th:if="${timeOffDaysList == null || timeOffDaysList.size() <= 0}">
+            <p><span th:text="#{Nodata}"> Selected year has no data. Do you want to copy the data from</span> <span th:text="${chosenYear - 1}"></span>?</p>
+            <a id="copy-data-link" class="btn btn-primary" href="#">Copy from <span th:text="${chosenYear - 1}"></span></a>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div th:replace="fragments/layout :: footer"></div>
+
+<!--Javascript Library-->
+<th:block th:replace="fragments/layout :: script"/>
+<script type="text/javascript" src="/webjars/bootbox.js/4.4.0/bootbox.js"
+        th:src="@{/webjars/bootbox.js/4.4.0/bootbox.js}"></script>
+<script th:inline="javascript">
+
+    /*<![CDATA[*/
+
+    var NO_LIMIT_STRING = /*[[#{No.Limit}]]*/ 'No limit';
+
+    /*]]>*/
+</script>
+<script src="/resources/js/manage-time-off-days.js" th:src="@{/resources/js/manage-time-off-days.js}"></script>
+<script src="/resources/js/jquery.jeditable.js" th:src="@{/resources/js/jquery.jeditable.js}"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="create_request_status" author="bnguyen">
+        <createTable tableName="request_status">
+            <column name="request_id" type="int" autoIncrement="true">
+                <constraints nullable="false"
+                             foreignKeyName="fk_request_status_request_id"
+                             references="request(id)"/>
+            </column>
+            <column name="leader_id" type="int">
+                <constraints nullable="true"
+                             foreignKeyName="fk_request_status_leader_id"
+                             references="employee(id)"/>
+            </column>
+            <column name="approved" type="bool">
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="request_status"
+                       columnNames="request_id, leader_id"
+                       constraintName="pk_request_status"/>
+    </changeSet>
+</databaseChangeLog>

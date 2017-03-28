@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Time-off Booking</title>
+    <!-- Javascript -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/webjars/bootswatch-paper/3.3.5+4/css/bootstrap.css" th:href="@{/webjars/bootswatch-paper/3.3.5+4/css/bootstrap.css}">
+    <link rel="stylesheet" href="/resources/css/bootstrap-datetimepicker.min.css" th:href="@{/resources/css/bootstrap-datetimepicker.min.css}">
+</head>
+
+<body>
+
+<div th:replace="fragments/layout :: header"></div>
+<!-- content -->
+<div class="container">
+    <section id="booking" style="margin-top: 90px;">
+        <div class="row">
+            <!-- form -->
+            <div class="col-md-6 jumbotron">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <!--<input type="hidden" th:field="*{id}"/>-->
+                        <legend>Book time-off</legend>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">From</label>
+                            <div class="col-lg-10">
+                                <div class='input-group date' id='from'>
+                                    <input type='text' class="form-control"/>
+                                    <span class="input-group-addon">
+			                        <span class="glyphicon glyphicon-calendar"></span>
+			                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">To</label>
+                            <div class="col-lg-10">
+                                <div class='input-group date' id='to'>
+                                    <input type='date' class="form-control"/>
+                                    <span class="input-group-addon">
+			                        <span class="glyphicon glyphicon-calendar"></span>
+			                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="select" class="col-lg-2 control-label">Type</label>
+                            <div class="col-lg-10">
+                                <select class="form-control" id="type">
+                                    <option>Vacation</option>
+                                    <option>Sick</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="textArea" class="col-lg-2 control-label">Comment</label>
+                            <div class="col-lg-10">
+                                <textarea class="form-control" rows="3" id="comment"
+                                      placeholder="Summer holiday"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                    * Your vacation request will be approved by ... and ...
+                </form>
+            </div>
+            <!-- summary -->
+            <div class="col-md-6">
+                <table class="table table-striped table-hover ">
+                    <thead>
+                    <tr>
+                        <th>Time-off</th>
+                        <th>Total</th>
+                        <th>Remaining</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Vacation</td>
+                        <td>15</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Sick</td>
+                        <td>4</td>
+                        <td>1</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+
+</div>
+<div th:replace="fragments/layout :: footer"></div>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" src="/webjars/jquery/3.1.1/jquery.min.js" th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+<script src="/resources/js/moment.min.js" th:src="@{/resources/js/moment.min.js}"></script>
+<script src="/resources/js/bootstrap-datetimepicker.min.js" th:src="@{/resources/js/bootstrap-datetimepicker.min.js}"></script>
+<script src="/resources/js/service.js" th:src="@{/resources/js/service.js}"></script>
+<script type="text/javascript" src="/webjars/bootswatch-paper/3.3.5+4/js/bootstrap.min.js" th:src="@{/webjars/bootswatch-paper/3.3.5+4/js/bootstrap.min.js}"></script>
+</body>
+</html>

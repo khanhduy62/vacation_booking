@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet author="tvo" id="add_new_vacation_type">
+        <insert tableName="vacation_type">
+            <column name="name" type="varchar(20)" value="Your marriage"/>
+            <column name="description" type="varchar(255)"
+                    value="An employee is entitled to fully paid leave of absence in he/she marriage: three (03) days."/>
+            <column name="depend_on_start_working_date" type="bool" value="false"/>
+        </insert>
+
+        <insert tableName="vacation_type">
+            <column name="name" type="varchar(20)" value="Marriage of child"/>
+            <column name="description" type="varchar(255)"
+                    value="An employee is entitled to fully paid leave of absence for marriage of their children: one (01) day."/>
+            <column name="depend_on_start_working_date" type="bool" value="false"/>
+        </insert>
+
+        <insert tableName="vacation_type">
+            <column name="name" type="varchar(20)" value="Family's Funeral"/>
+            <column name="description" type="varchar(255)"
+                    value="An employee is entitled to fully paid leave of absence for death of a natural parent (including a parent of his or her spouse), spouse, or child: three (03) days."/>
+            <column name="depend_on_start_working_date" type="bool" value="false"/>
+        </insert>
+
+        <insert tableName="vacation_type">
+            <column name="name" type="varchar(20)" value="Funeral"/>
+            <column name="description" type="varchar(255)"
+                    value="An employee is entitled to one (01) day leave of absence without pay, and must so notify the employer, on the death of a grandparent, sibling."/>
+            <column name="depend_on_start_working_date" type="bool" value="false"/>
+        </insert>
+
+        <insert tableName="vacation_type">
+            <column name="name" type="varchar(20)" value="Marriage"/>
+            <column name="description" type="varchar(255)"
+                    value="An employee is entitled to one (01) day leave of absence without pay, and must so notify the employer, on marriage of a parent, sibling."/>
+            <column name="depend_on_start_working_date" type="bool" value="false"/>
+        </insert>
+
+        <insert tableName="vacation_type">
+            <column name="name" type="varchar(20)" value="Agreement"/>
+            <column name="description" type="varchar(255)"
+                    value="An employee may reach agreement with the employer on leave of absence without pay."/>
+            <column name="depend_on_start_working_date" type="bool" value="false"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="insert_data_for_employee_yearly_quota" author="bnguyen">
+
+        <insert tableName="employee_yearly_quota">
+            <column name="employee_id" value="3"/>
+            <column name="yearly_quota_id" value="4"/>
+            <column name="new_quota" value="5"/>
+        </insert>
+        <insert tableName="employee_yearly_quota">
+            <column name="employee_id" value="3"/>
+            <column name="yearly_quota_id" value="5"/>
+            <column name="new_quota" value="20"/>
+        </insert>
+        <insert tableName="employee_yearly_quota">
+            <column name="employee_id" value="3"/>
+            <column name="yearly_quota_id" value="13"/>
+            <column name="new_quota" value="10"/>
+        </insert>
+        <insert tableName="employee_yearly_quota">
+            <column name="employee_id" value="3"/>
+            <column name="yearly_quota_id" value="14"/>
+            <column name="new_quota" value="5"/>
+        </insert>
+        <insert tableName="employee_yearly_quota">
+            <column name="employee_id" value="3"/>
+            <column name="yearly_quota_id" value="15"/>
+            <column name="new_quota" value="5"/>
+        </insert>
+        <insert tableName="employee_yearly_quota">
+            <column name="employee_id" value="3"/>
+            <column name="yearly_quota_id" value="16"/>
+            <column name="new_quota" value="5"/>
+        </insert>
+        <insert tableName="employee_yearly_quota">
+            <column name="employee_id" value="3"/>
+            <column name="yearly_quota_id" value="17"/>
+            <column name="new_quota" value="5"/>
+        </insert>
+        <insert tableName="employee_yearly_quota">
+            <column name="employee_id" value="3"/>
+            <column name="yearly_quota_id" value="18"/>
+            <column name="new_quota" value="6"/>
+        </insert>
+        <insert tableName="employee_yearly_quota">
+            <column name="employee_id" value="3"/>
+            <column name="yearly_quota_id" value="20"/>
+            <column name="new_quota" value="2"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

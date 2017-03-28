@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="create_employee" author="bnguyen">
+
+        <dropTable tableName="time_off_request"/>
+
+        <createTable tableName="employee" >
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false"
+                             primaryKeyName="pk_employee_id"
+                             primaryKey="true"/>
+            </column>
+            <column name="first_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"
+                             uniqueConstraintName="const_unique_email"
+                             unique="true"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="leader_id" type="int">
+                <constraints nullable="true"
+                             foreignKeyName="fk_leader_id"
+                             references="employee(id)"/>
+            </column>
+            <column name="start_working_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet author="tvo" id="insert_data_for_public_holiday">
+
+        <insert tableName="public_holiday">
+            <column name="name" value="New Year's Holiday"></column>
+            <column name="description" value="New Year's Holiday"></column>
+            <column name="key" value="New.Year.Holiday"></column>
+        </insert>
+
+        <insert tableName="public_holiday">
+            <column name="name" value="Tet Holiday"></column>
+            <column name="description" value="Propose first day of Tet holidays"></column>
+            <column name="key" value="Tet.Holiday"></column>
+        </insert>
+
+        <insert tableName="public_holiday">
+            <column name="name" value="Hung Kings Temple Festival"></column>
+            <column name="description" value="10th day of the 3rd lunar month"></column>
+            <column name="key" value="Hung.Kings.Temple.Festival"></column>
+        </insert>
+
+        <insert tableName="public_holiday">
+            <column name="name" value="International Labour Day"></column>
+            <column name="description" value="International Labour Day"></column>
+            <column name="key" value="International.Labour.Day"></column>
+        </insert>
+
+        <insert tableName="public_holiday">
+            <column name="name" value="Reunification Day"></column>
+            <column name="description" value="Marks the fall of Saigon in 1975"></column>
+            <column name="key" value="Reunification.Day"></column>
+        </insert>
+
+        <insert tableName="public_holiday">
+            <column name="name" value="National Day"></column>
+            <column name="description" value="Marks Vietnam's declaration of independence in 1945"></column>
+            <column name="key" value="National.Day"></column>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

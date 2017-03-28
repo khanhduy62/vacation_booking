@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="create_employee_yearly_quota" author="bnguyen">
+        <createTable tableName="employee_yearly_quota">
+            <column name="employee_id" type="int">
+                <constraints nullable="false"
+                             foreignKeyName="fk_employee_yearly_quota_employee_id"
+                             references="employee(id)"/>
+            </column>
+            <column name="yearly_quota_id" type="int">
+                <constraints nullable="false"
+                             foreignKeyName="fk_yearly_quota_vacation_type_id"
+                             references="yearly_quota(id)"/>
+            </column>
+            <column name="new_quota" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="employee_yearly_quota"
+                       columnNames="employee_id, yearly_quota_id"
+                       constraintName="pk_employee_yearly_quota"/>
+    </changeSet>
+</databaseChangeLog>

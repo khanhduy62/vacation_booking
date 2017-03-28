@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <th:block th:fragment="commonhead">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              th:href="@{/webjars/bootswatch-paper/3.3.5+4/css/bootstrap.css}">
+        <link rel="stylesheet" href="../../../resources/css/style.css" th:href="@{/resources/css/style.css}" />
+    </th:block>
+    <title>Layout</title>
+</head>
+<body>
+<!-- Header -->
+<header class="navbar navbar-default navbar-fixed-top" th:fragment="header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" th:href="@{/}">
+                <img alt="Brand" th:src="@{/resources/images/logo-mgm-vb.png}" src="../../../resources/images/logo-mgm-vb.png">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" th:if="${#authorization.expression('isAuthenticated()')}">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><th:block th:text="#{MyRequest}">My Request</th:block> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a th:href="@{/my-request/booking}" th:text="#{Book.Time.Off}">Book Time Off</a></li>
+                        <li><a th:href="@{/my-request/history}" th:text="#{History}">History</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" th:if="${#authorization.expression('hasAnyRole(''ROLE_ADMIN'+','+'ROLE_SUPER_ADMIN'')')}">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <span th:text="#{Admin}"></span><span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a th:href="@{/leader/listPendingRequest}" th:text="#{PendingRequest}">Pending Request</a></li>
+                    <li th:if="${#authorization.expression('hasRole(''ROLE_SUPER_ADMIN'')')}">
+                        <a th:href="@{/superadmin/manage_approvers}" th:text="#{Manage.Approvers}">Manage Approvers</a>
+                    </li>
+                    <li th:if="${#authorization.expression('hasRole(''ROLE_SUPER_ADMIN'')')}"><a th:href="@{/superadmin/manage_time_off_days}" th:text="#{Manage.Time.Off.Days}">Manage Time-off Days</a></li>
+                </ul>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li th:if="${#authorization.expression('isAuthenticated()')}">
+                    <a href="javascript:document.logoutForm.submit()" th:text="#{Sign.Out}">Sign Out</a>
+                    <form th:action="@{/logout}" method="post" name="logoutForm" th:hidden="true">
+                    </form>
+                </li>
+                <li class="btn-group language">
+                    <button type="button" id="btn-language" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span th:if="__${#locale}__=='en'"><img class="flag" src="../../../resources/images/us.svg" th:src="@{/resources/images/us.svg}"/>
+                                <span class="language-name"> EN</span>
+                            </span>
+                            <span th:if="__${#locale}__=='vi'"><img class="flag" src="../../../resources/images/vn.svg" th:src="@{/resources/images/vn.svg}"/><span class="language-name"> VN</span>
+                            </span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" id="list-language">
+                        <li th:if="__${#locale}__!='vi'">
+                            <a id="changeLanguageVI" th:href="@{/changeLanguage(language='vi')}">
+                                <img class="flag" src="../../../resources/images/vn.svg"
+                                     th:src="@{/resources/images/vn.svg}"/>
+                                <span class="language-name"> VN</span>
+                            </a>
+                        </li>
+                        <li th:if="__${#locale}__!='en'">
+                            <a id="changeLanguageEN" th:href="@{/changeLanguage(language='en')}">
+                                <img class="flag" src="../../../resources/images/us.svg"
+                                     th:src="@{/resources/images/us.svg}"/>
+                                <span class="language-name"> EN</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</header>
+
+<footer class="site-footer text-center" th:fragment="footer" th:align="center">
+    mgm technology partners Vietnam
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<th:block th:fragment="script">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            th:src="@{/webjars/bootswatch-paper/3.3.5+4/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" src="../../../resources/js/change_language.js" th:src="@{/resources/js/change_language.js}"></script>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="bnguyen" id="insert_vacation_type">
+        <insert tableName="vacation_type">
+            <column name="name" type="varchar(20)" value="Sick"/>
+            <column name="description" type="varchar(255)" value="headache"/>
+            <column name="depend_on_start_working_date" type="bool" value="false"/>
+        </insert>
+
+        <insert tableName="vacation_type">
+            <column name="name" type="varchar(20)" value="vacation"/>
+            <column name="description" type="varchar(255)" value="hawaii vacation"/>
+            <column name="depend_on_start_working_date" type="bool" value="true"/>
+        </insert>
+
+        <insert tableName="vacation_type">
+            <column name="name" type="varchar(20)" value="wedding"/>
+            <column name="description" type="varchar(255)" value="brother wedding"/>
+            <column name="depend_on_start_working_date" type="bool" value="false"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet author="dle" id="add_column_key_in_vacation_type">
+        <addColumn tableName="vacation_type">
+            <column name="key" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="dle" author="insert_value_key">
+        <update tableName="vacation_type">
+            <column name="key" value="Sick"/>
+            <where>id='1'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="key" value="Your.Marriage"/>
+            <where>id='4'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="key" value="Marriage.Of.Child"/>
+            <where>id='5'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="key" value="Family.Funeral"/>
+            <where>id='6'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="key" value="Funeral"/>
+            <where>id='7'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="key" value="Marriage"/>
+            <where>id='8'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="key" value="Vacation"/>
+            <where>id='2'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="key" value="Unpaid"/>
+            <where>id='9'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="key" value="Sick.With.Doctor.Note"/>
+            <where>id='10'</where>
+        </update>
+    </changeSet>
+</databaseChangeLog>

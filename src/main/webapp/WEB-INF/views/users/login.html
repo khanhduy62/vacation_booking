@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="fragments/layout::commonhead" />
+    <title>Login</title>
+</head>
+<body>
+<div th:replace="fragments/layout :: header"></div>
+<div class="container page-wrap">
+    <section id="login" style="margin-top: 90px;">
+
+        <div class="login-form">
+
+            <form class="form-horizontal jumbotron" th:action="@{/login}" method="post">
+                <div th:if="${error != null}">
+                    <div class="alert alert-dismissible alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <span href="#" class="alert-link">Email or Password is incorrected. Please try again.</span>
+                    </div>
+                </div>
+                <div th:if="${logout != null}">
+                    <div class="alert alert-dismissible alert-success">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <span href="#" class="alert-link" th:text="#{Logout.Successful}">!</span>
+                    </div>
+                </div>
+                <fieldset>
+                    <legend><h3 th:text="#{PleaseLogin}"></h3></legend>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-2 control-label" th:text="#{Email}"></label>
+                        <div class="col-lg-10">
+                            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-lg-2 control-label" th:text="#{Password}"></label>
+                        <div class="col-lg-10">
+                            <input type="password" name="password" class="form-control" id="inputPassword"
+                                   placeholder="Password">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"  name="remember-me-param" th:text="#{RememberMe}">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+                <!--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+            </form>
+        </div>
+    </section>
+</div>
+<div th:replace="fragments/layout :: footer"></div>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<th:block th:replace="fragments/layout :: script"/>
+</body>
+</html>

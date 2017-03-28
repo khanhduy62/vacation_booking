@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet id="fix_wrong_public_holiday" author="tvo">
+        <update tableName="yearly_public_holiday">
+            <column name="from_date" value="2017/4/30"></column>
+            <column name="to_date" value="2017/4/30"></column>
+            <where>id='5'</where>
+        </update>
+        <update tableName="yearly_public_holiday">
+            <column name="from_date" value="2017/9/2"></column>
+            <column name="to_date" value="2017/9/2"></column>
+            <where>id='6'</where>
+        </update>
+    </changeSet>
+</databaseChangeLog>

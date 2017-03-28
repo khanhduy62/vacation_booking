@@ -1,0 +1,26 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>FromDay</th>
+        <th>EndDay</th>
+        <th>Type</th>
+        <th>Comment</th>
+    </tr>
+    <tr th:each="message : ${users}">
+        <td th:text="${message.id}">ID</td>
+        <td th:text="${message.fromDay}">ID</td>
+        <td th:text="${message.endDay}">ID</td>
+        <td th:text="${message.type}">Type</td>
+        <td th:text="${message.comment}">Comment</td>
+    </tr>
+
+
+</table>
+</body>
+</html>

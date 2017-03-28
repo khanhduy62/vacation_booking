@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="dtan" id="new_table_employee_approver">
+        <createTable tableName="employee_approver">
+            <column name="employee_id" type="int">
+                <constraints nullable="false"
+                             foreignKeyName="fk_employee_approver_employee_id"
+                             references="employee(id)" />
+            </column>
+            <column name="approver_id" type="int">
+                <constraints nullable="false"
+                             foreignKeyName="fk_employee_approver_approver_id"
+                             references="employee(id)" />
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="employee_approver"
+                       columnNames="employee_id, approver_id"
+                       constraintName="pk_employee_approver"/>
+    </changeSet>
+    <changeSet id="insert_data_for_table_employee_approver" author="dtan">
+        <insert tableName="employee_approver">
+            <column name="employee_id" type="int" value="3"/>
+            <column name="approver_id" type="int" value="1" />
+        </insert>
+        <insert tableName="employee_approver">
+            <column name="employee_id" type="int" value="3"/>
+            <column name="approver_id" type="int" value="2" />
+        </insert>
+        <insert tableName="employee_approver">
+            <column name="employee_id" type="int" value="2"/>
+            <column name="approver_id" type="int" value="1" />
+        </insert>
+        <insert tableName="employee_approver">
+            <column name="employee_id" type="int" value="2"/>
+            <column name="approver_id" type="int" value="4" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

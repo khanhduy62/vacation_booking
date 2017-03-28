@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="dle" id="insert_data_request">
+        <insert tableName="request">
+            <column name="employee_id" type="int" value="3"/>
+            <column name="from_date" type="date" value="2017/1/20"/>
+            <column name="to_date" type="date" value="2017/1/25"/>
+            <column name="comment" type="varchar(255)" value="sick"/>
+            <column name="vacation_type_id" type="int" value="2"/>
+            <column name="cancelled" value="false"/>
+            <column name="created_at" type="datetime" value="2017/1/9"/>
+        </insert>
+
+        <insert tableName="request">
+            <column name="employee_id" type="int" value="3"/>
+            <column name="from_date" type="date" value="2017/1/20"/>
+            <column name="to_date" type="date" value="2017/1/25"/>
+            <column name="comment" type="varchar(255)" value="sick"/>
+            <column name="vacation_type_id" type="int" value="2"/>
+            <column name="cancelled" value="false"/>
+            <column name="created_at" type="datetime" value="2017/1/9"/>
+        </insert>
+
+        <insert tableName="request">
+            <column name="employee_id" type="int" value="3"/>
+            <column name="from_date" type="date" value="2017/2/20"/>
+            <column name="to_date" type="date" value="2017/2/25"/>
+            <column name="comment" type="varchar(255)" value="sick"/>
+            <column name="vacation_type_id" type="int" value="1"/>
+            <column name="cancelled" value="false"/>
+            <column name="created_at" type="datetime" value="2017/1/9"/>
+        </insert>
+        <insert tableName="request">
+            <column name="employee_id" type="int" value="3"/>
+            <column name="from_date" type="date" value="2017/2/21"/>
+            <column name="to_date" type="date" value="2017/2/25"/>
+            <column name="comment" type="varchar(255)" value="sick"/>
+            <column name="cancelled" value="false"/>
+            <column name="vacation_type_id" type="int" value="2"/>
+            <column name="created_at" type="datetime" value="2017/1/9"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

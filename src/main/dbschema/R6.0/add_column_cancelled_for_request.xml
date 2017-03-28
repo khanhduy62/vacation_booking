@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet author="bnguyen" id="add_column_cancelled_for_request">
+        <addColumn tableName="request">
+            <column name="cancelled" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="insert_cancelled_data" author="bnguyen">
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '1'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '2'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '3'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '4'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '5'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '6'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '7'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '8'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '9'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '10'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '11'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '12'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '13'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '14'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '15'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '16'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '17'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '18'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '19'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '20'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '21'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '22'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '23'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '24'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '25'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '26'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '27'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '28'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '29'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '30'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '31'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '32'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '33'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '34'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '35'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '36'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '37'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '38'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '39'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '40'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '41'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '42'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '43'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '44'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '45'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '46'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '47'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '48'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '49'</where>
+        </update>
+        <update tableName="request">
+            <column name="cancelled" value="false"/>
+            <where>id = '50'</where>
+        </update>
+    </changeSet>
+</databaseChangeLog>

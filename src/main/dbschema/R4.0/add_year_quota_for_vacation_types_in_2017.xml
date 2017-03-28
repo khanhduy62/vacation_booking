@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="add_year_quota_for_vacation_types_in_2017" author="hcao">
+
+        <update tableName="yearly_quota">
+            <column name="quota" value='4'/>
+            <where>id='4'</where>
+        </update>
+
+        <update tableName="yearly_quota">
+            <column name="quota" value='16'/>
+            <where>id='5'</where>
+        </update>
+
+        <insert tableName="yearly_quota">
+            <column name="year" value="2017"/>
+            <column name="vacation_type_id" value="4"/>
+            <column name="quota" value="3"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" value="2017"/>
+            <column name="vacation_type_id" value="5"/>
+            <column name="quota" value="1"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" value="2017"/>
+            <column name="vacation_type_id" value="6"/>
+            <column name="quota" value="3"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" value="2017"/>
+            <column name="vacation_type_id" value="7"/>
+            <column name="quota" value="1"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" value="2017"/>
+            <column name="vacation_type_id" value="8"/>
+            <column name="quota" value="1"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" value="2017"/>
+            <column name="vacation_type_id" value="9"/>
+            <column name="quota" value="null"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

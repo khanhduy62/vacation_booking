@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="bnguyen" id="insert_employee">
+        <insert tableName="employee">
+            <column name="first_name" type="varchar(50)" value="Binh"/>
+            <column name="last_name" type="varchar(50)" value="Phan"/>
+            <column name="email" type="varchar(255)" value="bphan@gmail.com"/>
+            <column name="password" type="varchar(255)" value="123456"/>
+            <column name="leader_id" type="int" value="null"/>
+            <column name="start_working_date" type="date" value="2014/12/11"/>
+        </insert>
+
+        <insert tableName="employee">
+            <column name="first_name" type="varchar(50)" value="Ly"/>
+            <column name="last_name" type="varchar(50)" value="Trieu"/>
+            <column name="email" type="varchar(255)" value="ly@gmail.com"/>
+            <column name="password" type="varchar(255)" value="123456"/>
+            <column name="leader_id" type="int" value="1"/>
+            <column name="start_working_date" type="date" value="2015/12/11"/>
+        </insert>
+
+        <insert tableName="employee">
+            <column name="first_name" type="varchar(50)" value="Duy"/>
+            <column name="last_name" type="varchar(50)" value="Le"/>
+            <column name="email" type="varchar(255)" value="duy@gmail.com"/>
+            <column name="password" type="varchar(255)" value="123456"/>
+            <column name="leader_id" type="int" value="2"/>
+            <column name="start_working_date" type="date" value="2015/12/11"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

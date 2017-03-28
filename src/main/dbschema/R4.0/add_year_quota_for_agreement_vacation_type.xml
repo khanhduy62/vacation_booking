@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="add_year_quota_for_agreement_vacation_type" author="hcao">
+
+        <dropNotNullConstraint columnDataType="int" columnName="quota" tableName="yearly_quota"/>
+
+        <insert tableName="yearly_quota">
+            <column name="year" type="int" value="2016"/>
+            <column name="vacation_type_id" type="int" value="9"/>
+            <column name="quota" type="int" value="null"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

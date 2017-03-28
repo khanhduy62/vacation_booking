@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <include file="src/main/dbschema/R1.0/create_time_off_request.xml" />
+    <include file="src/main/dbschema/R1.0/insert_data_time_off_request.sql" />
+    <include file="src/main/dbschema/R2.0/create_employee.xml" />
+    <include file="src/main/dbschema/R2.0/create_role.xml" />
+    <include file="src/main/dbschema/R2.0/create_employee_role.xml" />
+    <include file="src/main/dbschema/R2.0/create_vacation_type.xml" />
+    <include file="src/main/dbschema/R2.0/create_yearly_quota.xml" />
+    <include file="src/main/dbschema/R2.0/create_request.xml" />
+    <include file="src/main/dbschema/R2.0/create_request_status.xml" />
+    <include file="src/main/dbschema/R2.0/insert_data_for_employee.xml" />
+    <include file="src/main/dbschema/R2.0/insert_data_for_role.xml" />
+    <include file="src/main/dbschema/R2.0/insert_data_for_employee_role.xml" />
+    <include file="src/main/dbschema/R2.0/insert_data_for_vacation_type.xml" />
+    <include file="src/main/dbschema/R2.0/insert_data_for_yearly_quota.xml" />
+    <include file="src/main/dbschema/R2.0/insert_data_for_request.xml" />
+    <include file="src/main/dbschema/R2.0/insert_data_for_request_status.xml" />
+    <include file="src/main/dbschema/R2.1/update_data_for_role.xml" />
+    <include file="src/main/dbschema/R2.1/update_data_for_employee_role.xml" />
+    <include file="src/main/dbschema/R2.1/insert_data_for_request_status_2.xml" />
+    <include file="src/main/dbschema/R2.1/test_data_for_pagination.xml" />
+    <include file="src/main/dbschema/R3.0/delete_row_wedding_in_vacation_type.xml" />
+    <include file="src/main/dbschema/R3.0/update_quota_in_year.xml" />
+    <include file="src/main/dbschema/R4.0/fix_unconsistency_data.xml"/>
+    <include file="src/main/dbschema/R4.0/add_new_vacation_types.xml"/>
+    <include file="src/main/dbschema/R4.0/add_year_quota_for_new_vacation_types.xml"/>
+    <include file="src/main/dbschema/R4.0/add_year_quota_for_agreement_vacation_type.xml"/>
+    <include file="src/main/dbschema/R4.0/new_table_employee_approver.xml"/>
+    <include file="src/main/dbschema/R4.0/update_vacation_name.xml"/>
+    <include file="src/main/dbschema/R4.0/resize_length_of_vacation_name.xml"/>
+    <include file="src/main/dbschema/R4.0/add_new _role_super_admin.xml"/>
+    <include file="src/main/dbschema/R4.0/update_role_super_admin.xml"/>
+    <include file="src/main/dbschema/R4.0/add_year_quota_for_vacation_types_in_2017.xml"/>
+    <include file="src/main/dbschema/R5.0/rename_agreement_to_unpaid.xml"/>
+    <include file="src/main/dbschema/R5.0/add_new_vacation_types_sick_with_doctor_notice.xml"/>
+    <include file="src/main/dbschema/R5.0/add_column_key_in_vacation_type.xml"/>
+    <include file="src/main/dbschema/R5.0/create_employee_yearly_quota.xml"/>
+    <include file="src/main/dbschema/R5.0/insert_data_for_employee_yearly_quota.xml"/>
+    <include file="src/main/dbschema/R5.0/add_column_display_order_in_vacation_type.xml"/>
+    <include file="src/main/dbschema/R6.0/create_public_holiday.xml"/>
+    <include file="src/main/dbschema/R6.0/create_yearly_public_holiday.xml"/>
+    <include file="src/main/dbschema/R6.0/insert_data_for_public_holiday.xml"/>
+    <include file="src/main/dbschema/R6.0/insert_data_for_yearly_public_holiday.xml"/>
+    <include file="src/main/dbschema/R6.0/fix_wrong_public_holiday.xml"/>
+    <include file="src/main/dbschema/R6.0/add_column_cancelled_for_request.xml"/>
+    <include file="src/main/dbschema/R6.0/insert_data_for_request.xml"/>
+    <include file="src/main/dbschema/R6.0/insert_data_for_request_status.xml"/>
+</databaseChangeLog>

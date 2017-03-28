@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet author="dtan" id="add_column_display_order_in_vacation_type">
+        <addColumn tableName="vacation_type">
+            <column name="display_order" type="int">
+                <constraints nullable="true" unique="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="insert_display_order_values" author="dtan">
+        <update tableName="vacation_type">
+            <column name="display_order" value="1"/>
+            <where>name='Vacation'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="display_order" value="2"/>
+            <where>name='Sick'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="display_order" value="3"/>
+            <where>name='Sick with doctor''s note'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="display_order" value="4"/>
+            <where>name='Your marriage'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="display_order" value="5"/>
+            <where>name='Marriage of child'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="display_order" value="6"/>
+            <where>name='Marriage'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="display_order" value="6"/>
+            <where>name='Marriage'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="display_order" value="7"/>
+            <where>name='Family''s Funeral'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="display_order" value="8"/>
+            <where>name='Funeral'</where>
+        </update>
+        <update tableName="vacation_type">
+            <column name="display_order" value="9"/>
+            <where>name='Unpaid'</where>
+        </update>
+    </changeSet>
+</databaseChangeLog>

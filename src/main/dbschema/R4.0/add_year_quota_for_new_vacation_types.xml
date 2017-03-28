@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <changeSet id="add_year_quota_for_new_vacation_types" author="tvo">
+        <insert tableName="yearly_quota">
+            <column name="year" type="int" value="2016"/>
+            <column name="vacation_type_id" type="int" value="4"/>
+            <column name="quota" type="int" value="3"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" type="int" value="2016"/>
+            <column name="vacation_type_id" type="int" value="5"/>
+            <column name="quota" type="int" value="1"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" type="int" value="2016"/>
+            <column name="vacation_type_id" type="int" value="6"/>
+            <column name="quota" type="int" value="3"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" type="int" value="2016"/>
+            <column name="vacation_type_id" type="int" value="7"/>
+            <column name="quota" type="int" value="1"/>
+        </insert>
+
+        <insert tableName="yearly_quota">
+            <column name="year" type="int" value="2016"/>
+            <column name="vacation_type_id" type="int" value="8"/>
+            <column name="quota" type="int" value="1"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

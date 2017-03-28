@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="duyle" id="change_value_employee_role">
+        <update tableName="employee_role">
+            <column name="role_id" type="int" value='1'/>
+            <where>role_id='2'</where>
+        </update>
+        <update tableName="employee_role">
+            <column name="role_id" type="int" value='2'/>
+            <where>employee_id='2'</where>
+        </update>
+        <update tableName="employee_role">
+            <column name="employee_id" type="int" value='3'/>
+            <where>role_id='2'</where>
+        </update>
+    </changeSet>
+</databaseChangeLog>

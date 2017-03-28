@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="duyle" id="insert_request_status_2">
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="1"/>
+            <column name="leader_id" type="int" value="1"/>
+            <column name="approved" type="bool" value="true"/>
+        </insert>
+
+        <insert tableName="request_status">
+            <column name="request_id" type="int" value="2"/>
+            <column name="leader_id" type="int" value="1"/>
+            <column name="approved" type="bool" value="true"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

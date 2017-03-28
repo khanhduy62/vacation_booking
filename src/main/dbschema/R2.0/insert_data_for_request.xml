@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="bnguyen" id="insert_request">
+        <insert tableName="request">
+            <column name="employee_id" type="int" value="3"/>
+            <column name="from_date" type="date" value="2016/10/10"/>
+            <column name="to_date" type="date" value="2016/10/15"/>
+            <column name="comment" type="varchar(255)" value="sick"/>
+            <column name="vacation_type_id" type="int" value="1"/>
+            <column name="created_at" type="datetime" value="2016/10/9"/>
+        </insert>
+
+        <insert tableName="request">
+            <column name="employee_id" type="int" value="3"/>
+            <column name="from_date" type="date" value="2016/10/15"/>
+            <column name="to_date" type="date" value="2016/10/30"/>
+            <column name="comment" type="varchar(255)" value="marriage"/>
+            <column name="vacation_type_id" type="int" value="2"/>
+            <column name="created_at" type="datetime" value="2016/10/10"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
